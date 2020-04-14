@@ -1,4 +1,4 @@
-# frontend
+# WOO PMS Frontend
 
 ## Project setup
 ```
