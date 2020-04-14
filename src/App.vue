@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-nav />
-    <router-view class="page" />
+    <router-view class="page mt-12 mx-auto ml-24 mr-24"/>
   </div>
 </template>
 <script>
@@ -10,12 +10,6 @@
     components: { AppNav }
   }
 </script>
-<style lang="scss">
-  .page {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    min-height: calc(100vh - 56px);
-  }
+<style lang="sass">
+  @import "./assets/scss/tailwind.scss"
 </style>

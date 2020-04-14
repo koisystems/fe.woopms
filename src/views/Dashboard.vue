@@ -1,9 +1,10 @@
 <template>
     <div>
         <h1>Dashboard</h1>
-        <template v-if="!isLoading">
-            Hello {{user.name}} ( {{user.email}} )
-        </template>
+        <div v-if="!isLoading">
+            <h3 class="text=2xl">Hello {{user.name}} ( {{user.email}} )</h3>
+            <WooTable/>
+        </div>
         <p v-else>
             Loading data
         </p>
@@ -12,8 +13,10 @@
 
 <script>
     import axios from 'axios'
+    import WooTable from "../components/WooTable"
+
     export default {
-        components: {  },
+        components: { WooTable },
         data () {
             return {
                 isLoading: true,

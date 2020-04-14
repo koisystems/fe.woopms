@@ -6,10 +6,11 @@
         <router-link v-if="loggedIn" to="/dashboard">
             Dashboard
         </router-link>
-        <router-link v-if="!loggedIn" to="/login" class="button">
+        <font-awesome-icon icon="baby" />
+        <router-link v-if="!loggedIn" to="/login" class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
             Login
         </router-link>
-        <button v-else type="button" class="logoutButton" @click="logout">
+        <button v-else type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="logout">
             Logout
         </button>
     </div>
