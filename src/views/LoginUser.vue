@@ -1,0 +1,50 @@
+<template>
+    <div>
+        <form @submit.prevent="login">
+            <label for="email">
+                Email:
+            </label>
+            <input v-model="email" type="email" name="email" value>
+
+            <label for="password">
+                Password:
+            </label>
+            <input v-model="password" type="password" name="password" value>
+
+            <button type="submit" name="button">
+                Login
+            </button>
+
+            <div v-if="loginError">
+                Error Authenticating...
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                email: '',
+                password: '',
+                loginError: false
+            }
+        },
+        methods: {
+            login () {
+                this.$store
+                    .dispatch('login', {
+                        email: this.email,
+                        password: this.password
+                    })
+                    .then(() => {
+                        this.$router.push({name: 'dashboard'})
+                    })
+                    .catch(() => {
+                        this.loginError = true
+                    })
+            }
+        }
+    }
+</script>
